@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Cargar Angular -->
+    <!-- Utilizo AngularJS la última version de la serie 1.x, 
+    pues la versión más reciente "Angular" adoptan una arquitectura completamente diferente-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <header></header>
+        <nav></nav>
+        <section>
+            <!-- Aquí se mostrará el mensaje de "Hola Mundo" -->
+            {{ message }}
+        </section>
+        <footer></footer>
+    </div>
+
+    <!-- Código Angular -->
+    <script>
+        // App Angular
+        var app = angular.module('myApp', []);
+
+        // Definir controlador
+        app.controller('myCtrl', function ($scope) {
+            $scope.message = "Hola mundo desde Angular 👍🏻";
+        });
+    </script>
+</body>
+
+</html>
