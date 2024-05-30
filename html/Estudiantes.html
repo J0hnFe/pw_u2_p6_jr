@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
     <!--div a todo para que esté "bajo el control" de vue. 
         Id mismo nombre de la app-->
@@ -13,24 +15,25 @@
         <header></header>
         <nav></nav>
         <section>
-            <h1>Hola mundo desde VueJS</h1>
-            <p>{{1+1}}</p>
-            <p>{{[1, 2, 3]}}</p>
-            <p>{{true?'Verdadero':'Falso0'}}</p>
-
-            <p>{{mensaje}}</p>
-            <p>{{valor}}</p>
-
-            <button v-on:click="cambiarTexto">Cambiar texto</button>
-            <button v-on:click="sumar">Sumar</button>
+            <button v-on:click="agregar">Agregar</button>
+            <ul>
+                <!--
+                <li>{{lista[0].nombre}} A: {{lista[0].apellido}}</li>
+                <br>
+                <li>{{lista[1]}}</li>
+                <br>
+                <li>{{lista[2]}}</li>
+                -->
+                <li v-for="({nombre, apellido}, index) in lista">
+                    <h3>{{index + 1}} - {{nombre}}</h3>
+                    <h4>{{index + 1}} - {{apellido}}</h4>
+                </li>
+            </ul>
         </section>
         <footer></footer>
     </div>
-    <p>{{1+1}}</p>
-
     <!--Configurar archivo de vue, en esta parte. Excepción a la regla-->
     <script src="../js/app.js"></script>
 </body>
+
 </html>
-
-
